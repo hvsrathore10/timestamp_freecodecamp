@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Timestamp Microservice | hvsrathore10</title>
+      <link rel="shortcut icon" href="https://res.cloudinary.com/duovtuwdd/image/upload/v1735830581/alarm-clock_12188196_jvrcye.png" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+      <h1>Timestamp Microservice</h1>
+      <hr />
+      <div class="container">
+         <h2>Get Current Time:</h2>
+         <div id="current-time">Click the button to fetch the current time.</div>
+         <button id="fetch-time-btn">Get Current Time</button>
+      </div>
+
+      <div class="footer">
+         <p>
+            By <a href="https://github.com/hvsrathore10">hvsrathore10</a>
+         </p>
+      </div>
+
+      <script>
+         // Fetch and display the current time from the backend API
+         document.getElementById('fetch-time-btn').addEventListener('click', () => {
+            fetch('/api/')
+               .then(response => response.json())
+               .then(data => {
+                  const timeElement = document.getElementById('current-time');
+                  if (data.error) {
+                     timeElement.textContent = `Error: ${data.error}`;
+                  } else {
+                     timeElement.textContent = `Unix: ${data.unix}, UTC: ${data.utc}`;
+                  }
+               })
+               .catch(error => {
+                  console.error('Error fetching time:', error);
+                  document.getElementById('current-time').textContent = 'Error fetching time.';
+               });
+         });
+      </script>
+   </body>
+</html>

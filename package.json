@@ -1,0 +1,25 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "Timestamp project - An FCC Backend Challenge",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hvsrathore10/timestamp_freecodecamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hvsrathore10/timestamp_freecodecamp/issues"
+  },
+  "homepage": "https://github.com/hvsrathore10/timestamp_freecodecamp#readme",
+  "license": "ISC",
+  "author": "Harshvardhan Singh",
+  "type": "commonjs",
+  "main": "index.js"
+}
